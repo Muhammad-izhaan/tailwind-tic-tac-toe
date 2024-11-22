@@ -158,3 +158,67 @@
     padding: 1rem;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
+
+/* Responsive adjustments for floating animations */
+@media (max-width: 768px) {
+    @keyframes float {
+        0% {
+            transform: translateY(0px) translateX(0px) rotate3d(1, 1, 1, 0deg);
+        }
+        25% {
+            transform: translateY(-5px) translateX(2px) rotate3d(1, 1, 1, 1deg);
+        }
+        50% {
+            transform: translateY(0px) translateX(-2px) rotate3d(1, 1, 1, 0deg);
+        }
+        75% {
+            transform: translateY(5px) translateX(2px) rotate3d(1, 1, 1, -1deg);
+        }
+        100% {
+            transform: translateY(0px) translateX(0px) rotate3d(1, 1, 1, 0deg);
+        }
+    }
+
+    .game-container {
+        padding: 1rem;
+    }
+
+    .floating-board {
+        padding: 1rem;
+        animation-duration: 6s;
+    }
+
+    .history-container {
+        animation-duration: 8s;
+        margin-top: 2rem;
+    }
+
+    .game-title {
+        font-size: 2rem;
+        animation-duration: 4s;
+    }
+
+    #status {
+        font-size: 1.1rem;
+    }
+
+    .cell {
+        font-size: 1.5rem;
+    }
+
+    .cell:hover {
+        transform: translateZ(10px);
+    }
+}
+
+/* Adjust star animation for mobile */
+@media (max-width: 768px) {
+    .star {
+        animation-duration: 4s;
+    }
+    
+    .star.large {
+        width: 2px;
+        height: 2px;
+    }
+}
