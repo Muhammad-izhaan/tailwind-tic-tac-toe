@@ -15,7 +15,7 @@
         }
     </script>
 </head>
-<body class="dark:bg-gray-900 bg-gray-100 min-h-screen flex flex-col items-center justify-center transition-colors duration-200">
+<body class="dark:bg-gray-900 min-h-screen flex items-center justify-center transition-colors duration-200">
     <!-- Stars Background -->
     <div class="stars-container"></div>
 
@@ -29,30 +29,30 @@
         </div>
     </div>
 
-    <div class="absolute top-4 right-4">
-        <button id="themeToggle" class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white px-4 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
-            Toggle Theme
-        </button>
-    </div>
-
-    <div class="text-center relative z-10">
-        <h1 class="text-4xl font-bold mb-8 dark:text-white text-gray-900">Tic Tac Toe</h1>
-        <div id="status" class="text-xl mb-4 text-green-400">Player X's turn</div>
-        <div id="board" class="grid grid-cols-3 gap-2 mb-8">
-            <button class="cell w-24 h-24 bg-gray-200 dark:bg-gray-800 text-4xl font-bold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"></button>
-            <button class="cell w-24 h-24 bg-gray-200 dark:bg-gray-800 text-4xl font-bold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"></button>
-            <button class="cell w-24 h-24 bg-gray-200 dark:bg-gray-800 text-4xl font-bold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"></button>
-            <button class="cell w-24 h-24 bg-gray-200 dark:bg-gray-800 text-4xl font-bold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"></button>
-            <button class="cell w-24 h-24 bg-gray-200 dark:bg-gray-800 text-4xl font-bold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"></button>
-            <button class="cell w-24 h-24 bg-gray-200 dark:bg-gray-800 text-4xl font-bold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"></button>
-            <button class="cell w-24 h-24 bg-gray-200 dark:bg-gray-800 text-4xl font-bold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"></button>
-            <button class="cell w-24 h-24 bg-gray-200 dark:bg-gray-800 text-4xl font-bold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"></button>
-            <button class="cell w-24 h-24 bg-gray-200 dark:bg-gray-800 text-4xl font-bold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"></button>
+    <!-- Main Game Container -->
+    <div class="flex items-start justify-center gap-8 w-full max-w-7xl px-4">
+        <!-- Game Board Section -->
+        <div class="text-center relative z-10 game-container">
+            <h1 class="text-4xl font-bold mb-8 dark:text-white text-gray-900 game-title">Tic Tac Toe</h1>
+            <div class="floating-board">
+                <div id="status" class="text-xl mb-4 text-green-400">Player X's turn</div>
+                <div id="board" class="grid grid-cols-3 gap-2 mb-8">
+                    <button class="cell w-24 h-24 bg-gray-200 dark:bg-gray-800 text-4xl font-bold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"></button>
+                    <button class="cell w-24 h-24 bg-gray-200 dark:bg-gray-800 text-4xl font-bold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"></button>
+                    <button class="cell w-24 h-24 bg-gray-200 dark:bg-gray-800 text-4xl font-bold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"></button>
+                    <button class="cell w-24 h-24 bg-gray-200 dark:bg-gray-800 text-4xl font-bold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"></button>
+                    <button class="cell w-24 h-24 bg-gray-200 dark:bg-gray-800 text-4xl font-bold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"></button>
+                    <button class="cell w-24 h-24 bg-gray-200 dark:bg-gray-800 text-4xl font-bold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"></button>
+                    <button class="cell w-24 h-24 bg-gray-200 dark:bg-gray-800 text-4xl font-bold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"></button>
+                    <button class="cell w-24 h-24 bg-gray-200 dark:bg-gray-800 text-4xl font-bold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"></button>
+                    <button class="cell w-24 h-24 bg-gray-200 dark:bg-gray-800 text-4xl font-bold rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"></button>
+                </div>
+                <button id="resetBtn" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors">Reset Game</button>
+            </div>
         </div>
-        <button id="resetBtn" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors">Reset Game</button>
 
-        <!-- Game History Table -->
-        <div class="mt-8 w-full max-w-md mx-auto">
+        <!-- Game History Section -->
+        <div class="history-container w-80">
             <h2 class="text-2xl font-bold mb-4 dark:text-white text-gray-900">Game History</h2>
             <div class="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
                 <table class="w-full">
@@ -77,10 +77,7 @@
 
     <script>
         // Theme toggle functionality
-        const themeToggle = document.getElementById('themeToggle');
-        themeToggle.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-        });
+        // Removed theme toggle functionality
     </script>
     <script src="stars.js"></script>
     <script src="game.js"></script>
